@@ -11,11 +11,12 @@ var computer, computerBase;
 
 var playerBow;
 var computerBow;
+var computerArrows = [];
 
 
 
 
-var arrow;
+var computerArrow;
 
 
 function setup() {
@@ -84,6 +85,7 @@ function draw() {
 
 
 }
+
  
 
 

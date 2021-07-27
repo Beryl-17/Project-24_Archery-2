@@ -12,6 +12,12 @@ class ComputerArrow {
     this.image = loadImage("./assets/arrow.png");
     World.add(world, this.body);
   }
+  shoot() {
+    var velocity = p5.Vector.fromAngle(computerArrow.angle);
+    velocity.mult(20);
+    Matter.Body.setStatic(this.body, false);
+    Matter.Body.setVelocity(this.body, { x: velocity.x, y: velocity.y });
+  }
 
  display() {
     var pos = this.body.position;
@@ -22,6 +28,7 @@ class ComputerArrow {
       Matter.body.setStatic(this.body,false);
       Matter.body.setVelocity(this.body, { x : velocity.x, y: velocity.y})
     }
+    
     push();
     translate(pos.x, pos.y);
     rotate(angle);
